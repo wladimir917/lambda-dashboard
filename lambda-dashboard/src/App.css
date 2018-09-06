@@ -26,3 +26,21 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.App-button {
+  margin: 10px;
+  padding: 10px 30px;
+  color: white;
+  background: rgba(70, 176, 156, 1);
+  border: none;
+  border-radius: 10px;
+  font-weight: bolder;
+}
+
+.red {
+  background: rgb(201, 22, 132);
+}
+
+.blue {
+  background: rgb(22, 184, 233);
+}
