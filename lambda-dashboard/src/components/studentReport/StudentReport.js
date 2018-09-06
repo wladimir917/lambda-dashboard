@@ -38,7 +38,7 @@ class StudentReport extends Component {
         <div className="App-title">
           Project Manager: {this.state.projectManager}
         </div>
-        {this.state.isFetched && <ProgressBar currentValue={this.state.submittedSprints} icon={this.props.icon} maxValue={this.state.passedSprints} />}
+        {this.state.isFetched && <ProgressBar currentValue={this.state.submittedSprints} icon={this.props.icon} maxValue={this.state.passedSprints} completionLabel={'Sprint Pass Rate: '} />}
     </div>
     )
   }

@@ -50,8 +50,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          {!this.state.isLogged && <h1 className="App-title">Lambda Dashboard</h1>}
-          {this.state.isLogged && <h1 className="App-title">{this.state.message}</h1>}
+          <h1 className="App-title"> FSW Progress Report </h1>
+          {this.state.isLogged && <h1 className="App-user">{this.state.message}</h1>}
         </header>
         {!this.state.isLogged && <div>
           <button className="App-button" onClick={this.handleOnClickLogin}>Login</button>
@@ -62,7 +62,7 @@ class App extends Component {
         </div>}
         <Route path="/login" render={() => <UserLogin isLogin={true} onClickLogin={this.handleSubmitLogin}/>} />
         <Route path="/register" render={() => <UserLogin isLogin={false} onClickLogin={this.handleSubmitLogin}/>} />
-        <Route path="/dashboard" render={() => <StudentReport studentName={'Fausto Fraga'} currentSection={ 'CS10'  } projectManager={'Nikhil Kamineni'} icon="assignment_turned_in" submittedSprints={ 10 } passedSprints={ 21 }/>} />
+        <Route path="/dashboard" render={() => <StudentReport studentName={'Fausto Fraga'} currentSection={ 'CS10'  } projectManager={'Nikhil Kamineni'} icon="assignment_turned_in" submittedSprints={ 16 } passedSprints={ 21 }/>} />
       </div>
     );
   }

@@ -62,7 +62,7 @@ class ProgressBar extends Component {
         <div className={ classes }>
           <div className="labels">
             <span className="completion">{ this.completion() }</span>
-            <span className="percentage">{ this.percentage() }%</span>
+            <span className="percentage">{ this.props.completionLabel}{ this.percentage() }%</span>
             <span className="total">{ this.totalLeft() }</span>
           </div>
           <div className="bar">

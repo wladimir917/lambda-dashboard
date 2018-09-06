@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 80px;
 }
 
@@ -16,6 +16,10 @@
 
 .App-title {
   font-size: 1.5em;
+}
+
+.App-user {
+  font-size: 1em;
 }
 
 .App-intro {
@@ -44,3 +48,9 @@
 .blue {
   background: rgb(22, 184, 233);
 }
+
+
+/* .css-13ymtpq, [data-css-13ymtpq] {
+  width: 140px;
+  height: 40px;
+} */
