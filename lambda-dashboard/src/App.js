@@ -4,6 +4,7 @@ import { Route, withRouter } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import UserLogin from './components/user/UserLogin';
+import StudentReport from './components/studentReport/StudentReport';
 
 class App extends Component {
   constructor(props) {
@@ -31,8 +32,8 @@ class App extends Component {
   }
 
   handleOnClickLogout = () => {
-    if (localStorage.getItem('jwt')) {
-      localStorage.removeItem('jwt');
+    if (localStorage.getItem('token')) {
+      localStorage.removeItem('token');
     }
     this.props.history.push('/');
     this.setState({ isLogged: false });
@@ -40,7 +41,7 @@ class App extends Component {
 
   handleSubmitLogin = (msg) => {
     this.setState({ isLogged: true, message: msg});
-    this.props.history.push('/jokes');
+    this.props.history.push('/dashboard');
   };
 
 
@@ -61,7 +62,7 @@ class App extends Component {
         </div>}
         <Route path="/login" render={() => <UserLogin isLogin={true} onClickLogin={this.handleSubmitLogin}/>} />
         <Route path="/register" render={() => <UserLogin isLogin={false} onClickLogin={this.handleSubmitLogin}/>} />
-        {/* <Route path="/jokes" component={JokesList} /> */}
+        <Route path="/dashboard" render={() => <StudentReport studentName={'Fausto Fraga'} currentSection={ 'CS10'  } projectManager={'Nikhil Kamineni'} icon="assignment_turned_in" submittedSprints={ 10 } passedSprints={ 21 }/>} />
       </div>
     );
   }
