@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ProgressBar from '../progressBar/ProgressBar';
+import axios from 'axios';
+
 
 class StudentReport extends Component {
   constructor(props) {
@@ -13,6 +15,19 @@ class StudentReport extends Component {
       isFetched: false
     }
   }
+  fetchStudentReport = () => {
+    axios
+      .post('http://127.0.0.1:8000/api/studentReport', {username: this.state.username, password: this.state.password})
+      .then(response => {
+        localStorage.setItem('token', response.data.key);
+        localStorage.setItem('msg', this.state.username);
+        this.props.onClickLogin( this.state.username );
+
+      })
+      .catch(err => {
+        this.setState({username: '', password: ''});
+      });
+  };
 
   componentDidMount() {
     this.setState({studentName: this.props.studentName,
